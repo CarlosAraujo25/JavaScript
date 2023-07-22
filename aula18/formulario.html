@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18pt;
+        }
+
+        .caixatexto{
+            background: #ff0;
+            border: 0;
+            border: 1px solid black;
+            font-size: 18pt;
+        }
+
+        form {
+            width: 400px;
+            border: 22px double #f00;
+            padding: 20px;
+            margin: auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <Strong>Valor1:</Strong>
+        <input type="number" name="valor1" id="valor1" class="caixatexto"><br>
+        <Strong>Valor2:</Strong>
+        <input type="number" name="valor2" id="valor2" class="caixatexto"><br>
+        <strong>Opções</strong><br>
+        <input type="radio" name="opc" id="opc1" onclick="soma()">SOMA<br>
+        <input type="radio" name="opc" id="opc2">SUBTRAÇÃO<br>
+        <input type="radio" name="opc" id="opc3">MULTIPLICAÇÃO<br>
+        <input type="radio" name="opc" id="opc4"> DIVISÃO<br>
+        <STRONG>Resultado:</STRONG> <br>
+        <input type="text" name="res" id="res" class="caixatexto">
+        <input type="button" value="calcular" name="calc" id="calc" onclick="calcular()">
+    </form>
+
+    <script>
+        let n1=document.getElementById('valor1')
+        let n2=document.getElementById('valor2')
+
+        let soma = document.querySelector('input#opc1')
+        let sub = document.querySelector('input#opc2')
+        let multi = document.querySelector('input#opc3')
+        let divi = document.querySelector('input#opc4')
+
+        let res = document.getElementById('res')
+     
+
+        function isNumero(n){
+            if(Number(n)){
+                return true
+            }
+        }
+
+        function calcular(){
+            if(isNumero(n1.value) && isNumero(n2.value)){
+                window.alert('okay')
+            } else {
+                window.alert('Por favor, digite um valor.')
+            }
+        }
+    </script>
+</body>
+</html>
